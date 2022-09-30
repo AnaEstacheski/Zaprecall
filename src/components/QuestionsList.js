@@ -3,14 +3,15 @@ import styled from "styled-components"
 import logo from "../assets/img/logo.png"
 
 export default function QuestionsList() {
-
-
-
-   
-  
+    return (
+        <ScreenContainer>
+            <h1>ZapRecall</h1>
+        </ScreenContainer>
+    )
+ 
 }
 
-const Screencontainer = styled.div `
+const ScreenContainer = styled.div `
 
 background-color: #FB6B6B;
 width: 100vw;

@@ -2,13 +2,17 @@ import styled from "styled-components"
 import React from "react";
 
 export default function Footer() {
+    return (
+        <Bottom>
+            0/4 CONCLUÍDOS
+        </Bottom>
+        
+    )
    
 }
 
 
-
-
-const Footer = styled.div`
+const Bottom = styled.div`
     width: 100%;
     min-height: 50px;
     background-color: #FFFFFF;

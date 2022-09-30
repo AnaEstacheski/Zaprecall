@@ -2,24 +2,23 @@ import React from "react"
 import styled from "styled-components"
 import logo from "../assets/img/logo.png"
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({ startRecall, setStartRecall }) {
 
     function click() {
-
+        setStartRecall(!startRecall)
     }
 
     return (
         <MainContainer>
             <img src={logo} alt="ZapRecall" />
             <h1>ZapRecall</h1>
-            <button>Iniciar Recall</button>
+            <button onClick={click}>Iniciar Recall</button>
         </MainContainer>
     )
 }
 
 
-const MainContainer = styled.div
-    `   
+const MainContainer = styled.div`   
     background-color: #FB6B6B;
     width: 100vw;
     height: 100vh;
@@ -55,7 +54,4 @@ const MainContainer = styled.div
         box-shadow: 0px 4px 4px 0px #00000026;
         cursor: pointer;
     }
-
-
-    
 `
