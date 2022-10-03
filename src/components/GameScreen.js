@@ -1,13 +1,12 @@
 import { useState } from "react"
 import styled from "styled-components"
-import logo from "../assets/img/logo.png"
-import DECKREACT from "../aux/decks"
 import FlashCardList from "./FlashCardList"
+import DECKREACT from "../aux/decks"
+import logo from "../assets/img/logo.png"
 
 export default function GameScreen() {
     const [flashcards, setFlashcards] = useState(DECKREACT)
-    const [resposta, serResposta] = useState([])
-    const [riscado, setRiscado] = useState([])
+    const [answered, setAnswered] = useState(0)
 
     return (
         <>
@@ -16,18 +15,18 @@ export default function GameScreen() {
                     <img src={logo} alt="ZapRecall"></img>
                     <h1>ZapRecall</h1>
                 </LogoContainer>
-                <FlashCardList flashcards={flashcards} />
+                <FlashCardList flashcards={flashcards} answered={answered} setAnswered={setAnswered}/>
             </ScreenContainer>
-            <Footer />
+            <Footer answered={answered}/>
         </>
     )
 
 }
 
-function Footer() {
+function Footer({ answered }) {
     return (
         <Bottom>
-            0/4 CONCLUÍDOS
+            {answered}/4 CONCLUÍDOS
         </Bottom>
 
     )

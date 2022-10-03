@@ -1,7 +1,7 @@
 import React from 'react'
 import FlashCard from './FlashCard'
 
-export default function FlashCardList({ flashcards }) {
+export default function FlashCardList({ flashcards, answered, setAnswered}) {
     const count = [1, 2, 3, 4]
     let randomCards = []
 
@@ -13,7 +13,7 @@ export default function FlashCardList({ flashcards }) {
         <>
 
             {count.map((count, i) => {
-                return <FlashCard flashcard={flashcards[randomCards[i]]} num={count} />
+                return <FlashCard flashcard={flashcards[randomCards[i]]} num={count} answered={answered} setAnswered={setAnswered}/>
             })}
 
         </>

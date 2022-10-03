@@ -2,9 +2,13 @@ import { useState } from "react"
 import styled from "styled-components"
 import seta from "../assets/img/seta_play.png"
 import virar from "../assets/img/seta_virar.png"
+import erro from "../assets/img/icone_erro.png"
+import quase from "../assets/img/icone_quase.png"
+import certo from "../assets/img/icone_certo.png"
 
-export default function FlashCard({ flashcard, num }) {
+export default function FlashCard({ flashcard, num, answered, setAnswered }) {
     const [stateCard, setStateCard] = useState(1)
+    
 
     return (
         <>
@@ -21,25 +25,29 @@ export default function FlashCard({ flashcard, num }) {
             stateCard == 3 ?
                 <OpenCard>
                     {flashcard.answer}
+                    <Buttons>
+                        <Button className="red" onClick={() => {setStateCard(4); setAnswered(answered+1)}}>Não lembrei</Button>
+                        <Button className="yellow" onClick={() => {setStateCard(5); setAnswered(answered+1)}}>Quase não lembrei</Button>
+                        <Button className="green" onClick={() => {setStateCard(6); setAnswered(answered+1)}}>Zap!</Button>
+                    </Buttons>
                 </OpenCard> :
-                    <div></div>
+            stateCard == 4 ?
+                <Closed>
+                    <p className="red">Pergunta {num}</p>
+                    <img src={erro}></img>
+                </Closed> :
+            stateCard == 5 ?
+            <Closed>
+                <p className="yellow">Pergunta {num}</p>
+                <img src={quase}></img>
+            </Closed> :
+            stateCard == 6 ?
+            <Closed>
+                <p className="green">Pergunta {num}</p>
+                <img src={certo}></img>
+            </Closed> :
+            <div></div>
             }
-
-
-            {/* {(function () {
-                switch (statecard) {
-                    case 1:
-                        return ( */}
-            {/* <Closed>
-                                <p>Pergunta {num}</p>
-                                <img src={seta} onClick={() => setStateCard(2) }></img>
-                            </Closed> */}
-            {/* )
-                }
-            })} */}
-
-            {/* {flashcard ? <ClosedCard flashcard={flashcard} num={num} /> : <OpenCard> {flashcard.question} </OpenCard>}  */}
-
         </>
     )
 }
@@ -94,4 +102,59 @@ const Closed = styled.div`
     img {
         cursor: pointer;
     }
-`   
+
+    .red {
+        color: red;
+        text-decoration: line-through;
+    }
+
+    .yellow {
+        color: yellow;
+        text-decoration: line-through;
+    }
+
+    .green {
+        color: green;
+        text-decoration: line-through;
+    }
+`
+
+const Buttons = styled.div`
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    margin: 20px;
+
+    .red {
+        background-color: red;
+    }
+
+    .yellow {
+        background-color: yellow;
+    }
+
+    .green { 
+    background-color: green;
+    }
+`
+const Button = styled.div`
+    width: 90px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+    background: blue;
+    border-radius: 5px;
+    border: 1px solid blue;
+    padding:5px;
+
+    red {
+        background-color: red;
+    }
+`
