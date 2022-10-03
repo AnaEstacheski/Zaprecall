@@ -6,7 +6,6 @@ import FlashCardList from "./FlashCardList"
 
 export default function GameScreen() {
     const [flashcards, setFlashcards] = useState(DECKREACT)
-    const [aberto, setAberto] = useState([])
     const [resposta, serResposta] = useState([])
     const [riscado, setRiscado] = useState([])
 
