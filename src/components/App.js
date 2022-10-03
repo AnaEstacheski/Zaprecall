@@ -1,6 +1,6 @@
 import GlobalStyle from "../assets/styles/GlobalStyle"
 import WelcomeScreen from "./WelcomeScreen"
-import QuestionsList from "./QuestionsList"
+import GameScreen from "./GameScreen"
 import { useState } from "react"
 
 export default function App() {
@@ -8,8 +8,8 @@ export default function App() {
 
     return (
         <>
-            {startRecall ? <QuestionsList /> : <WelcomeScreen startRecall={startRecall} setStartRecall={setStartRecall} />}
-           
+            {startRecall ? <GameScreen /> : <WelcomeScreen startRecall={startRecall} setStartRecall={setStartRecall} />}
+
         </>
     )
 }
