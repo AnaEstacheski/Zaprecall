@@ -35,14 +35,13 @@ function Footer({ answered }) {
 
 const ScreenContainer = styled.div`
     background-color: #FB6B6B;
-    width: 100vw;
-    min-height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0px;
-    padding: 0px;
-    padding-bottom: 200px;
+  
+    padding-bottom: 250px;
 `
 const LogoContainer = styled.div`
     display: flex;

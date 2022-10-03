@@ -55,7 +55,7 @@ export default function FlashCard({ flashcard, num, answered, setAnswered }) {
 const OpenCard = styled.div`
     width: 300px;
     margin: 12px;
-    padding: 15px;
+    padding: 15px 15px 10px 15px;
     min-height: 100px;
     background: #FFFFD5;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
@@ -70,7 +70,7 @@ const OpenCard = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    
     img {
         position: absolute;
         bottom: 10px;
@@ -104,41 +104,41 @@ const Closed = styled.div`
     }
 
     .red {
-        color: red;
+        color: #f04732;
         text-decoration: line-through;
+       
     }
 
     .yellow {
-        color: yellow;
+        color: #f69131;
         text-decoration: line-through;
     }
 
     .green {
-        color: green;
+        color: #61bf37;
         text-decoration: line-through;
     }
 `
 
 const Buttons = styled.div`
     display: flex;
-    width: 80%;
+    width: 100%;
     justify-content: space-between;
-    margin: 20px;
-
+   
     .red {
-        background-color: red;
+        background-color: #f04732;
     }
 
     .yellow {
-        background-color: yellow;
+        background-color: #f69131;
     }
 
     .green { 
-    background-color: green;
+    background-color: #61bf37;
     }
 `
 const Button = styled.div`
-    width: 90px;
+    width: 85px;
     font-family: 'Recursive';
     font-style: normal;
     font-weight: 400;
@@ -151,10 +151,6 @@ const Button = styled.div`
     color: #FFFFFF;
     background: blue;
     border-radius: 5px;
-    border: 1px solid blue;
-    padding:5px;
+    padding:5px
 
-    red {
-        background-color: red;
-    }
 `

@@ -8,6 +8,7 @@ export default function App() {
 
     return (
         <>
+            <GlobalStyle />
             {startRecall ? <GameScreen /> : <WelcomeScreen startRecall={startRecall} setStartRecall={setStartRecall} />}
 
         </>
